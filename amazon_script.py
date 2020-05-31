@@ -29,3 +29,4 @@ assert text == '"Dress"', f'Incorrect text: {text}.'
 
 
 driver.quit()
+# driver.find_element(By.XPATH , "//*[@id='nav-orders']/span[2]").click()

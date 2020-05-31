@@ -6,6 +6,7 @@ from time import sleep
 SEARCH_INPUT = (By.ID, 'twotabsearchtextbox')
 SEARCH_SUBMIT = (By.XPATH, "//input[@value='Go']")
 RESULTS_INFO = (By.XPATH, "//span[@class='a-color-state a-text-bold']")
+ORDERS = (By.XPATH, "//*[@id='nav-orders']/span[2]")
 
 
 
@@ -25,6 +26,11 @@ def input_search(context, search_word):
 @when('Click on search icon')
 def click_search_icon(context):
     context.driver.find_element(*SEARCH_SUBMIT).click()
+    sleep(1)
+
+@when('When click on orders')
+def click_orders_button(context):
+    context.driver.find_element(*ORDERS).click()
     sleep(1)
 
 
