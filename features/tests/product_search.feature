@@ -7,3 +7,4 @@ Feature: Test Scenarios for Amazon search functionality
     And Click on search icon
     Then Product results for Dress are shown
     #And First result contains skirt
+

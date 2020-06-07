@@ -1,3 +1,46 @@
+"""
+The most optimal locators for Create Account (Registration) page elements:
+
+1. Amazon logo :
+
+By.CSS_SELECTOR = ".a-icon-log"
+
+2. Create account :
+
+By.CSS_SELECTOR  = ".a-box-inner h1"
+
+3. Your name :
+
+By.ID = "ap_customer_name"
+
+4. Email :
+
+By.ID = "ap_email"
+
+5. Password :
+
+By.ID = "ap_password"
+
+6. Re-enter password :
+
+By.ID = "ap_password_check"
+
+7. Create your Amazon account :
+
+By.ID = "continue"
+
+8. Conditions of use :
+
+By.XPATH = "//a[contains(@href,'condition_of_use')]"
+
+9. Privacy Notice :
+
+By.XPATH = "//a[contains(@href,'privacy_notice')]"
+
+10. Sign-In :
+
+By.CSS_SELECTOR = ".a-link-emphasis"
+"""
 # Locators for Amazon Sign In page
 
 # Amazon logo:

@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome(executable_path="C:/Users/Bogos/QA docs/python-selenium-automation/chromedriver" )
+driver = webdriver.Chrome(executable_path="C:/Users/Bogos/QA docs/python-selenium-automation/chromedriver")
 driver.maximize_window()
 
 driver.get('https://www.amazon.com/gp/help/customer/display.html ')
@@ -11,7 +11,7 @@ search_box.send_keys("Cancel order")
 search_button = driver.find_element(By.XPATH, "//input[@type='submit' and @class='a-button-input']")
 search_button.click()
 
-result = driver.find_element(By.XPATH, "//p[@class='a-color-secondary']/b" )
+result = driver.find_element(By.XPATH, "//p[@class='a-color-secondary']/b")
 text_result = result.text
 
 assert text_result == 'Cancel order', f'Incorrect text {text_result}'

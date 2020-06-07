@@ -5,13 +5,13 @@ from time import sleep
 
 SEARCH_INPUT = (By.ID, 'twotabsearchtextbox')
 SEARCH_SUBMIT = (By.XPATH, "//input[@value='Go']")
-RESULTS_INFO = (By.XPATH, "//span[@class='a-color-state a-text-bold']")
+RESULTS_INFO = (By.CSS_SELECTOR, ".a-color-state.a-text-bold")
 ORDERS = (By.XPATH, "//*[@id='nav-orders']/span[2]")
 
 
 
 @given('Open Amazon page')
-def open_google(context):
+def open_amazon(context):
     context.driver.get('https://www.amazon.com/')
 
 
