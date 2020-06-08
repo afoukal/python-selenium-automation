@@ -28,6 +28,7 @@ def choose_item(context):
     context.driver.find_element(*SHOES).click()
     sleep(2)
 
+
 @when('Choose the size')
 def choose_size(context):
     context.driver.find_element(*DROP_DOWN).click()
