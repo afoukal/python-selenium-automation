@@ -17,13 +17,13 @@ def input_help_search(context, search_word):
     search = context.driver.find_element(*HELP_SEARCH)
     search.clear()
     search.send_keys(search_word)
-    sleep(4)
+
 
 
 @when('Click on Go')
 def click_go(context):
     context.driver.find_element(*GO).click()
-    sleep(1)
+
 
 
 @then('Solution results are shown for {search_word}')
