@@ -6,3 +6,4 @@ Feature: Test Scenarios for WholeFoods product count
     When Click on Browse Products
     And Choose the store
     Then Number of products per page is 60
+    And 4 products are shown for each category
