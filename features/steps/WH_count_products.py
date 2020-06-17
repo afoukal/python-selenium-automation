@@ -1,14 +1,12 @@
 from time import sleep
-from selenium.webdriver.common.action_chains import ActionChains
-
-from behave import given, when
+from behave import given, when, then
 from selenium.webdriver.common.by import By
 
 PRODUCTS = (By.CSS_SELECTOR, "a.menu__link.menu--main__link[href*='products']")
 FIND_STORE = (By.CSS_SELECTOR, ".Input-InputField--KUzM1")
 #FIND_STORE2 = (By.CLASS_NAME, "StoreSelector-Option--mQyct")
 #FIND_STORE2 = (By.CSS_SELECTOR, "StoreSelector-Option--mQyct")
-FIND_STORE2= (By.XPATH, "//div[@class='StoreSelector-Option--mQyct']")
+FIND_STORE2= (By.XPATH, "//div[@class='StoreSelector-DropdownOptions--vrkEe']/div[1]")
 
 @given('Open Whole Foods page')
 def open_wh_page(context):
@@ -18,11 +16,18 @@ def open_wh_page(context):
 @when("Click on Browse Products")
 def click_browse_products(context):
     context.driver.find_element(*PRODUCTS).click()
-    sleep(2)
 
 
 @when("Choose the store")
 def choose_store(context):
     context.driver.find_element(*FIND_STORE).send_keys("75019")
     context.driver.find_element(*FIND_STORE2).click()
-    sleep(10)
+
+
+@then("Number of products per page is {number_products}")
+def product_number(context, number_products):
+    product_num = context.driver.find_elements(By.CSS_SELECTOR, "a[store='[object Object]']")
+    assert len(product_num) == int(number_products), f'Supposed to be {number_products}, but got {len(product_num)} products per page'
+
+
+

@@ -5,4 +5,4 @@ Feature: Verify number of elements in Amazon results
     Given Open Amazon page
     When Input lego into search field
     And Click on search icon
-    Then Number of elements is equal to 61
+    Then Number of elements is equal to 60
