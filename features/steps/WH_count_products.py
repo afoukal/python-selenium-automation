@@ -7,6 +7,7 @@ FIND_STORE = (By.CSS_SELECTOR, ".Input-InputField--KUzM1")
 #FIND_STORE2 = (By.CLASS_NAME, "StoreSelector-Option--mQyct")
 FIND_STORE2 = (By.CSS_SELECTOR, ".StoreSelector-Option--mQyct")
 #FIND_STORE2= (By.XPATH, "//div[@class='StoreSelector-DropdownOptions--vrkEe']/div[1]")
+CATEGORY = (By.XPATH, "//div[@class='LandingPage-Root--1b1TW']/div[1]/div[2]/a")
 
 @given('Open Whole Foods page')
 def open_wh_page(context):
@@ -33,11 +34,8 @@ def product_number(context, number_products):
 
 @then('{prod_cat} products are shown for each category')
 def prod_cat_number(context, prod_cat):
-    list_cat = context.driver.find_elements(By.CSS_SELECTOR, ".LandingPage-Category--1kS-b")
-    print(len(list_cat))
-    for item in range(len(list_cat)):
-        print(list_cat[item])
-
+    list_cat = context.driver.find_elements(*CATEGORY)
+    assert len(list_cat) == int(prod_cat), f'{prod_cat} products should be shown for each category, but {len(list_cat)}'
 
 
 
