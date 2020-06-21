@@ -29,4 +29,4 @@ def after_step(context, step):
 
 def after_scenario(context, feature):
     context.driver.delete_all_cookies()
-    context.driver.quit()
+    #context.driver.quit()
