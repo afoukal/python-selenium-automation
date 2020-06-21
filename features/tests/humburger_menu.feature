@@ -1,6 +1,8 @@
 # Created by Bogos at 6/14/2020
-Feature: Locate a hamburger menu sign
+Feature: Scenarios for Amazon hamburger menu
 
-  Scenario: Locate a hamburger menu sign
+  Scenario: Amazon Music has 6 menu items
     Given Open Amazon page
-    Then Locate  hamburger menu
+    When Click on hamburger menu
+    And Click on Amazon Music menu item
+    Then 6 menu items are present
