@@ -1,3 +1,26 @@
+"""Create a function that will take a string as an input and return the 1st non-unique letter of a string.
+“Google” => “l”
+“Amazon” => “m”
+If there are no unique letters, return an empty string: “xoxoxo” => “”.
+How would you test it? How would you handle edge cases?
+"""
+str_1 = 'Google'
+
+
+def unique_char(string):
+    string = string.lower()
+    for item in string:
+        if string.count(item) == 1:
+            return item
+            break
+    return ''
+
+
+print(unique_char(str_1))
+
+
+
+
 """
 The most optimal locators for Create Account (Registration) page elements:
 
