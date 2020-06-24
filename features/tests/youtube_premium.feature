@@ -4,5 +4,4 @@ Feature: Test Scenarios for Youtube Premium
   Scenario: User is getting "Youtube Premium" pop-up
     Given Open Youtube page
     When Click on the first video
-    And Click on Like
-    Then Like this video? text is displayed
+    Then Click on Like
