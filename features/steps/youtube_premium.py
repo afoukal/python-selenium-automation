@@ -7,7 +7,8 @@ VIDEO_1 = (By.CSS_SELECTOR, ".style-scope ytd-rich-grid-renderer ytd-rich-item-r
 LIKE = (By.CSS_SELECTOR, "a.yt-simple-endpoint.style-scope.ytd-toggle-button-renderer")
 LIKE_VIDEO = (By.XPATH, "//*[text()='Like this video?']")
 PREMIUM_POPUP = (By.XPATH, "//*[text()='1 month free']")
-ADS = (By.CSS_SELECTOR, ".ytp-ad-image")
+#ADS = (By.ID, "preskip-component:n")
+ADS = (By.CSS_SELECTOR, ".video-ads.ytp-ad-module")
 SKIP = (By.CSS_SELECTOR, ".ytp-ad-skip-button.ytp-button")
 
 
@@ -38,12 +39,11 @@ def like_video(context):
     assert 'Like' in like_video_text, f'{like_video_text} displayed instead'   """
 
     premium_popup = context.driver.find_elements(*PREMIUM_POPUP)
-    ads = context.driver.find_element(*ADS)
-    skip = context.driver.find_element(*SKIP)
+    ads = context.driver.find_elements(*ADS)
     if len(premium_popup) > 0:
         premium_popup.click()
     elif len(ads) > 0:
-        context.driver.wait.until(EC.element_to_be_clickable(SKIP))
+        context.driver.wait.until(EC.element_to_be_clickable(SKIP)).click()
     else:
         context.driver.find_element(*LIKE).click()
     sleep(3)
