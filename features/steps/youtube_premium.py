@@ -40,10 +40,11 @@ def like_video(context):
 
     premium_popup = context.driver.find_elements(*PREMIUM_POPUP)
     ads = context.driver.find_elements(*ADS)
-    if len(premium_popup) > 0:
-        premium_popup.click()
-    elif len(ads) > 0:
-        context.driver.wait.until(EC.element_to_be_clickable(SKIP)).click()
+    if len(ads) > 0:
+        if context.driver.find_element(*SKIP).text == 'Skip Ads':
+            context.driver.find_element(*SKIP).click()
+        elif context.driver.wait.until(EC.element_to_be_clickable(PREMIUM_POPUP)):
+            premium_popup.click()
     else:
         context.driver.find_element(*LIKE).click()
     sleep(3)
