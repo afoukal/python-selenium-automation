@@ -14,10 +14,8 @@ def open_wh_deals(context):
 @then('Each item has {regular} field and Product name')
 def verify_regular_field(context, regular):
     product_list = context.driver.find_elements(*RESULTS)
-    for i in range(len(product_list)):
-        regular_field_text = context.driver.find_element(*REGULAR).text
-        product_name_text = context.driver.find_element(*PRODUCT_NAME).text
-        assert str(regular) in regular_field_text
-        assert len(product_name_text) > 0
+    for i in range(len(product_list)-1):
+        assert 'Regular' in product_list[i].text
+        assert len(product_list[i].find_element(*PRODUCT_NAME).text) > 0
 
 

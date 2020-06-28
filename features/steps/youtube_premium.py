@@ -25,19 +25,6 @@ def choose_video(context):
 
 @then("Click on Like")
 def like_video(context):
-    """premium_popup = context.driver.find_element(*PREMIUM_POPUP)
-    ads = context.driver.find_element(*ADS)
-    skip = context.driver.find_element(*SKIP)
-    if premium_popup.is_displayed():
-        premium_popup.click()
-    elif ads.is_displayed():
-        context.driver.wait.until(EC.element_to_be_clickable(SKIP))
-    else:
-        context.driver.find_element(*LIKE).click()
-    sleep(3)
-    like_video_text = context.driver.find_element(*LIKE_VIDEO).text
-    assert 'Like' in like_video_text, f'{like_video_text} displayed instead'   """
-
     premium_popup = context.driver.find_elements(*PREMIUM_POPUP)
     ads = context.driver.find_elements(*ADS)
     if len(ads) > 0:
