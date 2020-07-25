@@ -10,3 +10,4 @@ Feature: Test for products
   Scenario: New arrivals deals are displayed
     Given Open Amazon B074TBCSC8 product page
     When Hover over New Arrivals
+    Then New Arrivals option list is displayed
