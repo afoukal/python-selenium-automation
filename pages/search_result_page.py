@@ -10,3 +10,5 @@ class SearchResults(Page):
     def verify_found_result_text(self, search_word):
         self.verify_text(search_word, *self.RESULTS_INFO)
 
+
+

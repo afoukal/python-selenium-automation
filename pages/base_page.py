@@ -1,3 +1,4 @@
+from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -8,6 +9,7 @@ class Page:
         self.driver = driver
         self.base_url = 'https://www.amazon.com'
         self.wait = WebDriverWait(self.driver, 10)
+        self.actions = ActionChains(self.driver)
 
 
     def open_page(self, url=''):
@@ -23,7 +25,7 @@ class Page:
         e.clear()
         e.send_keys(text)
 
-    def find_element(self, locator):
+    def find_element(self, *locator):
         return self.driver.find_element(*locator)
 
 

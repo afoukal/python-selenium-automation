@@ -22,3 +22,10 @@ def verify_found_results_text(context, search_word):
     context.app.search_result_page.verify_found_result_text(search_word)
 
 
+@when('Select {alias} department')
+def select_department(context, alias):
+    context.app.top_nav_menu.select_department(alias)
+
+@then('{selected_dep} department in selected')
+def verify_selected_department(context, selected_dep):
+    context.app.top_nav_menu.verify_selected_department(selected_dep)
